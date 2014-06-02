@@ -1,7 +1,7 @@
 action :speak do
   require 'hipchat'
   begin
-    client = HipChat::Client.new(@new_resource.token, :api_version => 'v2')
+    client = HipChat::Client.new(@new_resource.token, :api_version => 'v2', :server_url => @new_resource.server)
 
     message = @new_resource.message || @new_resource.name
 
